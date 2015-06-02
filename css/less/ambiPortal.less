@@ -1,0 +1,271 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
+
+@import "prefixer.less";
+@import "bootstrap/bootstrap.less";
+@import "ionicons/ionicons.less";
+
+@brand-primary: #6cb33e;
+@brand-secondary: #514e26;
+@grey-primary: #e2dfd7;
+
+.shadow{ .box-shadow(0px 3px 5px rgba(0,0,0,.25));   .transition(all .3s ease-out); }
+.hover-shadow:hover{ .transition(all .3s ease-out); box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.hover-border:hover{ background-color: lighten(@brand-primary, 10%); border: 2px solid white; .transition(all .3s ease-out); }
+.hover-border{ border: 2px solid transparent; .transition(all .3s ease-out); }
+
+.btn-default.btn-smooth-default{
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  border-color: rgba(255, 255, 255, 0.5);
+  .transition(all 2s ease);
+  &:hover{ background-color: rgba(255, 255, 255, 0.25); border-color: #ffffff; .transition(all 2s ease); }
+}
+
+.btn-primary.btn-smooth-primary{
+  color: #fff;
+  font-weight: bold;
+  .transition(all 2s ease);
+  &:hover{ .box-shadow(0 1px 3px rgba(0, 0, 0, 0.27)); .transition(all 2s ease); }
+}
+
+
+.btn-xlg{
+  text-transform: uppercase;
+  width: 180px;
+  height: 60px;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+body { 
+  font-size: 1.6rem;
+  color: #212121;
+  background-color: #ffffff;
+  font-family: 'Raleway';
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+nav{
+  position: fixed; 
+  height: 80px; 
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #ffffff;
+  .transition(all .5s ease);
+  .logo { max-height: 80px; padding: 10px 0; .transition(all .25s ease); }
+  .btn{ 
+    opacity: 1;
+    margin: 23px 0; border-radius: 5px; background-color: transparent; color: @brand-primary; 
+    text-transform: uppercase; font-weight: bold; .transition(all .5s ease);
+    &:hover{ background-color: @brand-primary; color: white; border-color: @brand-primary; }
+    &.btn-hidden{ opacity: 0; .transition(all .5s ease); }
+  }
+  &.nav-top {
+    height: 120px; .transition(all .5s ease);
+    .logo { max-height: 120px; padding: 20px 0; .transition(all .25s ease); }
+    .btn{ margin: 44px 0;}
+  }
+}
+
+.cover{  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-image: url('../images/cover.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 100vh; 
+  color: #ffffff;
+  .title-page-info{ 
+    font-family: 'open sans';
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    span{ display: block; }
+  }
+}
+
+.page-title{ font-weight: bold; font-size: 40px; margin: 40px 0; text-align: center;}
+.page-subtitle{ font-weight: 600; font-size: 36px; margin: 40px 0; text-align: left;}
+
+.info-wrapper{ 
+  padding: 10px 25px; text-align: center; 
+  h3{ color: #333; font-weight: bold; margin-top: 0; } 
+}
+.svg-container{ max-height: 30vh;  padding: 10px;  overflow: hidden;  img{ max-height: 20vh; margin: 0 auto; } }
+.page-info-text{ margin-bottom: 75px; }
+
+
+.pag-inscricoes{
+  .info-wrapper{ background-color: #F2F2F2; h3{ opacity: .8; } }
+  .page-info-text{ h1{font-size: 50px; margin-top: 50px; } p{ font-size: 16px; } } 
+  button{  border-radius: 3px;  font-weight: bold;  font-size: 16px;}
+}
+
+section.funcionamento{
+ background-color: @brand-primary; color: white;
+ .info-wrapper{ padding: 25px; }
+ .svg-container{ padding-bottom: 0; }
+ h3{ text-align: center; font-weight: bold; margin: 0; padding: 0 0 30px 0; color: white; }
+ h2{ font-size: 70px; margin: 0; padding: 0 15px; line-height: 100px;  font-family: 'open sans'; }
+ p{ text-align: left; }
+}
+
+section.vantagens{
+  li{ list-style: none;}
+  .info-about{ padding: 50px 20px; background-color: @brand-primary; color: white; }
+  .info-vantagens{ padding: 50px 20px; background-color: #f2f2f2;  }
+}
+
+section.contactos{ 
+  position: relative;
+  background-color: #323232; color: white; 
+  
+  .contact-info p, .social-wrapper{  
+    max-width: 250px;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  @social-s: 40px;
+  .social{
+    width: @social-s;
+    height: @social-s;
+    border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    color: #323232;
+    font-size: 25px;
+    line-height: @social-s;
+  }
+
+  .form-control{ background: #272727; border: none; color: white; }
+
+  .footer{ position: absolute; left: 0; right: 0; bottom: 0; text-align: center; margin: 0 auto; p{ font-size: 12px; opacity: .5; } }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+==============================================
+floating
+==============================================
+*/
+.floating{
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  bottom: 30px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  min-width: 30px;
+  min-height: 30px;
+
+  animation-name: floating;
+  -webkit-animation-name: floating;
+
+  animation-duration: 1.5s; 
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(8%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);  
+  }
+  50% {
+    -webkit-transform: translateY(8%);  
+  } 
+  100% {
+    -webkit-transform: translateY(0%);
+  }     
+}
+
+
+/* columns of same height styles */
+
+.row-flex, .row-flex > div[class*='col-'] {  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex:1 1 auto;
+}
+
+.row-flex-wrap {
+  -webkit-flex-flow: row wrap;
+  align-content: flex-start;
+  flex:0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+ margin:-.2px; /* hack adjust for wrapping */
+}
+
+.container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
+  width:100%;
+}
+
+
+.flex-col {
+  display: flex;
+  display: -webkit-flex;
+  flex: 1 100%;
+  flex-flow: column nowrap;
+}
+
+.flex-grow {
+  display: flex;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+// DUAS COLUNAS - ROW class="row equal-height"
+.equal-height, .equal-height > div[class*='col-'] {  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex:1 1 auto;
+}
